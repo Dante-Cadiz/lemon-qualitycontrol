@@ -8,3 +8,6 @@ node_modules/
 .github/
 cloudinary_python.txt
 kaggle.json
+outputs/v1/hypertuning/*
+outputs/v1/lemon_quality_model.h5
+inputs/*

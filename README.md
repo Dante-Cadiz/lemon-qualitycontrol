@@ -1,21 +1,38 @@
 ## Dataset Content
-* Describe your dataset
+* The dataset for this project is a large collection of 2D images of lemons in a zipped file, pre-labelled as either being of good or poor quality based on the visual condition of their rind. There is also a third category of images; blank backgrounds not containing a lemon. I have chosen to ignore this third category here as analysing it is not necessary to fulfil the project's business requirements. These images are all 300x300px but will be resized during the image preparation process to allow for more time-efficient model learning. This dataset was found here on [Kaggle](https://www.kaggle.com/datasets/yusufemir/lemon-quality-dataset)
 
 
 ## Business Requirements
-* Describe your business requirements
+* The stakeholder for this project is the owner of a small-scale commerical fruit preparation factory that supplies local markets. 
+* The factory handles and processes fruit delivered from local farms to ensure it is ready for supermarket display and sale. 
+- The factory's current process for separating its lemons into those suitable and unsuitable for retail currently involves: 
+Conveyor belt machinery that measures diameter
+Performing chemical tests such as ripening gas concentration and assessment for common types of rot
+Factory employees manually inspecting and separating the fruits based on a visual assessment of blemishes and overall skin quality. 
+- The factory owner wants to eliminate this final process and replace it with a computerised image assessment, speeding the overall preparation of lemons up and removing reliance on individual human judgement and susceptibility to error. 
+
+- As such, the project has the following business objectives:
+- The client is interested in defining and analysing the visual difference between good and poor quality lemons. This will be satisfied via conventional data analysis: finding the average image and variability per label in the data set, as well as the contrast between said labels.
+- The client is interested in accurately and instantly predicting from a given image whether a lemon is of good or poor quality. This business objective will be delivered by the development and deployment of a TensorFlow deep learning pipeline 
+- The content satisfying these two business objectives will be combined into a Streamlit dashboard and delivered to stakeholders.
+
 
 
 ## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision to validate it (them) 
+* There will be a clear visual difference noticeable between the average images for each label; good and poor quality lemons
+* Validation accuracy
 
 
 ## Rationale to map the business requirements to the Data Visualizations and ML tasks
 * List your business requirements and a rationale to map them to the Data Visualizations and ML tasks
-
+- The client is interested in defining and analysing the visual difference between good and poor quality lemons. This will be satisfied via conventional data analysis: finding the average image and variability per label in the data set, as well as the contrast between said labels.
 
 ## ML Business Case
 * In the previous bullet, you potentially visualized a ML task to answer a business requirement. You should frame the business case using the method we covered in the course 
+- The client is interested in accurately predict from a given image whether a lemon is of good or poor quality. This business objective will be delivered by the development and deployment of a TensorFlow deep learning pipeline 
+- The eventual target of the machine learning pipeline is a binary classification label; good or poor quality.
+The stakeholder has decided that the most important metric for evaluating the success of the machine learning model is recall on the negative results of a poor quality lemon. This is because providing possibly poor quality lemons to supermarkets is a worse outcome than mistakenly discarding good quality ones. A preliminary recall score to assess the model's success has been set at 0.95
+F1 score will also be taken into consideration
 
 
 ## Dashboard Design
@@ -51,14 +68,12 @@
 
 ### Content 
 
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+- Much of the project's functions came from Code Institute's sample Malaria Detector project, along with inspiration for the workflow direction
+- Information about typical lemon defects and testing methods during quality control came from [Clarifruit](https://www.clarifruit.com/knowledge-base/fresh-produce-categories/lemons/)
 
 ### Media
 
-- The photos used on the home and sign up page are from This Open Source site
-- The images used for the gallery page were taken from this other open source site
+
 
 
 
