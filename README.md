@@ -1,6 +1,7 @@
 ## Dataset Content
-* The dataset for this project is a large collection of 2D images of lemons in a zipped file, pre-labelled as either being of good or poor quality based on the visual condition of their rind. There is also a third category of images; blank backgrounds not containing a lemon. I have chosen to ignore this third category here as analysing it is not necessary to fulfil the project's business requirements. These images are all 300x300px but will be resized during the image preparation process to allow for more time-efficient model learning. This dataset was found here on [Kaggle](https://www.kaggle.com/datasets/yusufemir/lemon-quality-dataset)
-
+* This project uses 2 datasets from separate sources that are later combined and analysed simultaneously to fulfil the project's business objectives.
+* The first dataset for this project is a large collection of 2D images of lemons in a zipped file, pre-labelled as either being of good or poor quality based on the visual condition of their rind. There is also a third category of images; blank backgrounds not containing a lemon. I have chosen to ignore this third category here as analysing it is not necessary to fulfil the project's business requirements. These images are all 300x300px but will be resized during the image preparation process to allow for more time-efficient model learning. This dataset was found here on [Kaggle](https://www.kaggle.com/datasets/yusufemir/lemon-quality-dataset)
+* The second dataset is another large collection of 2D images, annotated manually by the data owner using OpenCV's CVAT. The annotations capture typical lemon quality issues such as illness, gangrene, mould, visual blemishes, and dark style remains. The annotations also cover structural regions of the lemon and photographic features such as lighting issues or blur. The annotated dataset can be accessed, read and viewed via pycocotools' COCO function. These images are all 1056x1056px but will be resized during the image preparation process to allow for more time-efficient model learning. This dataset was found here on [Kaggle](https://www.kaggle.com/datasets/maciejadamiak/lemons-quality-control-dataset)
 
 ## Business Requirements
 * The stakeholder for this project is the owner of a small-scale commerical fruit preparation factory that supplies local markets. 
@@ -12,7 +13,7 @@ Factory employees manually inspecting and separating the fruits based on a visua
 - The factory owner wants to eliminate this final process and replace it with a computerised image assessment, speeding the overall preparation of lemons up and removing reliance on individual human judgement and susceptibility to error. 
 
 - As such, the project has the following business objectives:
-- The client is interested in defining and analysing the visual difference between good and poor quality lemons. This will be satisfied via conventional data analysis: finding the average image and variability per label in the data set, as well as the contrast between said labels.
+- The client is interested in analysing the visual difference between good and poor quality lemons, specifically the visual markers that define a poor quality lemon. This will be satisfied via conventional data analysis: finding the average image and variability per label in the data set, as well as the contrast between said labels.
 - The client is interested in accurately and instantly predicting from a given image whether a lemon is of good or poor quality. This business objective will be delivered by the development and deployment of a TensorFlow deep learning pipeline 
 - The content satisfying these two business objectives will be combined into a Streamlit dashboard and delivered to stakeholders.
 
