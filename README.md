@@ -6,6 +6,7 @@
 ## Business Requirements
 * The stakeholder for this project is the owner of a small-scale commerical fruit preparation factory that supplies local markets. 
 * The factory handles and processes fruit delivered from local farms to ensure it is ready for supermarket display and sale. 
+Heuristic
 - The factory's current process for separating its lemons into those suitable and unsuitable for retail currently involves: 
 Conveyor belt machinery that measures diameter
 Performing chemical tests such as ripening gas concentration and assessment for common types of rot
@@ -21,6 +22,7 @@ Factory employees manually inspecting and separating the fruits based on a visua
 
 ## Hypothesis and how to validate?
 * There will be a clear visual difference noticeable between the average images for each label; good and poor quality lemons
+* Put info about typical lemon diseases/defects here
 * Validation accuracy
 
 
@@ -32,7 +34,8 @@ Factory employees manually inspecting and separating the fruits based on a visua
 * In the previous bullet, you potentially visualized a ML task to answer a business requirement. You should frame the business case using the method we covered in the course 
 - The client is interested in accurately predict from a given image whether a lemon is of good or poor quality. This business objective will be delivered by the development and deployment of a TensorFlow deep learning pipeline 
 - The eventual target of the machine learning pipeline is a binary classification label; good or poor quality.
-The stakeholder has decided that the most important metric for evaluating the success of the machine learning model is recall on the negative results of a poor quality lemon. This is because providing possibly poor quality lemons to supermarkets is a worse outcome than mistakenly discarding good quality ones. A preliminary recall score to assess the model's success has been set at 0.95
+The stakeholder has decided that the most important metric for evaluating the success of the machine learning model is recall on the negative results of a poor quality lemon. This is because providing possibly poor quality lemons to supermarkets is a worse outcome than mistakenly discarding good quality ones. A preliminary recall score to assess the model's success has been set at 0.98
+
 F1 score will also be taken into consideration
 
 
