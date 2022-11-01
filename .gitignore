@@ -10,4 +10,6 @@ cloudinary_python.txt
 kaggle.json
 outputs/v1/hypertuning/*
 outputs/v1/lemon_quality_model.h5
+outputs/v2/hypertuning/*
+outputs/v2/lemon_quality_model.h5
 inputs/*
