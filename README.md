@@ -64,6 +64,14 @@ F1 score will also be taken into consideration
 ## Main Data Analysis and Machine Learning Libraries
 * Here you should list the libraries you used in the project and provide example(s) on how you used these libraries.
 
+- Numpy
+- Pandas
+- Matplotlib
+- Seaborn - data visualisation
+- Plotly - data visualisation
+- Tensorflow - image preprocessing, model building, hyperparameter tuning
+- Scikit-image - image processing/transformation
+
 
 ## Credits 
 
