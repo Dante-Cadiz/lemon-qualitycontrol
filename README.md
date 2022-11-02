@@ -34,9 +34,19 @@ Factory employees manually inspecting and separating the fruits based on a visua
 * In the previous bullet, you potentially visualized a ML task to answer a business requirement. You should frame the business case using the method we covered in the course 
 - The client is interested in accurately predict from a given image whether a lemon is of good or poor quality. This business objective will be delivered by the development and deployment of a TensorFlow deep learning pipeline 
 - The eventual target of the machine learning pipeline is a binary classification label; good or poor quality.
-The stakeholder has decided that the most important metric for evaluating the success of the machine learning model is recall on the negative results of a poor quality lemon. This is because providing possibly poor quality lemons to supermarkets is a worse outcome than mistakenly discarding good quality ones. A preliminary recall score to assess the model's success has been set at 0.98
+- The performance and quality of the model
+ and its ability to identify and discern visual features that mark a bad quality lemon
+- The stakeholder has decided that the most important metric for evaluating the success of the machine learning model is recall on the negative results of a poor quality lemon. This is because providing possibly poor quality lemons to supermarkets is a worse outcome than mistakenly discarding good quality ones. A preliminary recall score threshold to assess the model's success has been set at 0.98.
 
-F1 score will also be taken into consideration
+- Accuracy and F1 score will also be taken into consideration - with 95% accuracy as minimum threshold
+- Output
+- Heuristic
+
+## Hypotheses and how to Validate
+
+1.
+2.
+3.
 
 
 ## Dashboard Design
