@@ -91,6 +91,7 @@ Factory employees manually inspecting and separating the fruits based on a visua
 ### Content 
 
 - Much of the project's functions came from Code Institute's sample Malaria Detector project, along with inspiration for the workflow direction
+- Code for calculating class weights came from [this StackOverflow answer](https://stackoverflow.com/questions/42586475/is-it-possible-to-automatically-infer-the-class-weight-from-flow-from-directory/67678399#67678399)
 - Information about typical lemon defects and testing methods during quality control came from [Clarifruit](https://www.clarifruit.com/knowledge-base/fresh-produce-categories/lemons/)
 
 ### Media
