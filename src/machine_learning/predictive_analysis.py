@@ -7,7 +7,7 @@ from PIL import Image
 from src.data_management import load_pkl_file
 
 
-def plot_predictions_probabilities(pred_proba, pred_class):
+def plot_predictions_probabilities(pred_proba: float, pred_class: str):
     """
     Plot prediction probability results
     """
@@ -33,19 +33,19 @@ def plot_predictions_probabilities(pred_proba, pred_class):
 
 
 
-def resize_input_image(img, version):  
+def resize_input_image(img: np.ndarray, version: str) -> np.ndarray:  
     """
     Rewrite this function to also preformat the image, or possibly just only allow input of the cleaned data
     """
     image_shape = load_pkl_file(file_path=f"outputs/{version}/image_shape.pkl")
     img_resized = img.resize((image_shape[1], image_shape[0]), Image.ANTIALIAS)
-    # need to get image shape correct
+    # need to get image shape correct :3
     my_image = np.expand_dims(img_resized, axis=0)/255
 
     return my_image
 
 
-def load_model_and_predict(my_image, version):
+def load_model_and_predict(my_image: np.ndarray, version: str) -> tuple[float, str]:
     """
     Load and perform ML prediction over live images
     """

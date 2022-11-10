@@ -32,7 +32,7 @@ def page_lemon_quality_assessor_body():
 
             img_pil = (Image.open(image))
             st.info(f"Lemon Image: **{image.name}**")
-            img_array = np.array(img_pil)
+            img_array = np.array(img_pil) # add reshape here to :3
             st.image(img_pil, caption=f"Image Size: {img_array.shape[1]}px width x {img_array.shape[0]}px height")
 
             version = 'v4'
@@ -47,3 +47,7 @@ def page_lemon_quality_assessor_body():
             st.success("Analysis Report")
             st.table(df_report)
             st.markdown(download_dataframe_as_csv(df_report), unsafe_allow_html=True)
+
+# This is the error that this function is currently throwing
+# raise ValueError( ValueError: Input 0 of layer sequential_1 is incompatible with the layer: expected axis -1 of input shape to have value 3 but received input with shape (None, 100, 100, 4)
+# The 4 is a RGBA value but the model expects RGB?
