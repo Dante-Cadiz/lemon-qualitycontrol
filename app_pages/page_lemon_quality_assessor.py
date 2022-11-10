@@ -30,7 +30,7 @@ def page_lemon_quality_assessor_body():
         df_report = pd.DataFrame([])
         for image in images_buffer:
 
-            img_pil = (Image.open(image))
+            img_pil = (Image.open(image)).convert('RGB')
             st.info(f"Lemon Image: **{image.name}**")
             img_array = np.array(img_pil) # add reshape here to :3
             st.image(img_pil, caption=f"Image Size: {img_array.shape[1]}px width x {img_array.shape[0]}px height")

@@ -4,6 +4,7 @@ import pandas as pd
 import plotly.express as px
 from tensorflow.keras.models import load_model
 from PIL import Image
+from typing import Tuple
 from src.data_management import load_pkl_file
 
 
@@ -14,7 +15,7 @@ def plot_predictions_probabilities(pred_proba: float, pred_class: str):
 
     prob_per_class= pd.DataFrame(
             data=[0,0],
-            index={'bad_quality': 0, 'good_quality': 1}.keys(),
+            index={'Bad Quality': 0, 'Good Quality': 1}.keys(),
             columns=['Probability']
         )
     prob_per_class.loc[pred_class] = pred_proba
@@ -45,7 +46,7 @@ def resize_input_image(img: np.ndarray, version: str) -> np.ndarray:
     return my_image
 
 
-def load_model_and_predict(my_image: np.ndarray, version: str) -> tuple[float, str]:
+def load_model_and_predict(my_image: np.ndarray, version: str) -> Tuple[float, str]:
     """
     Load and perform ML prediction over live images
     """
