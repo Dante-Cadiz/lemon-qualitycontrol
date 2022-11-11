@@ -84,6 +84,12 @@ Factory employees manually inspecting and separating the fruits based on a visua
 - Scikit-image - image processing/transformation
 - Rembg - data cleaning
 
+## Testing
+
+## Bugs
+
+- Two associated bugs in production on Heroku where creating an image montage fails and throws a Syntax Error 'Not a PNG file', and .h5 file for model fails to load. 
+- These were found to be because the input image files and .h5 model files were stored in Git LFS which Heroku does not support
 
 ## Credits 
 
