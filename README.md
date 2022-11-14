@@ -89,7 +89,8 @@ Factory employees manually inspecting and separating the fruits based on a visua
 ## Bugs
 
 - Two associated bugs in production on Heroku where creating an image montage fails and throws a Syntax Error 'Not a PNG file', and .h5 file for model fails to load. 
-- These were found to be because the input image files and .h5 model files were stored in Git LFS which Heroku does not support
+- These were found to be because the input image files and .h5 model files were stored in Git LFS which Heroku does not support.
+- To fix this bug, I followed the steps exactly as documented [here](https://ankane.org/git-lfs-on-heroku), generating a public and private SSH key pair to allow Heroku access to Git LFS.
 
 ## Credits 
 
