@@ -1,0 +1,5 @@
+inputs/lemon-quality-dataset/lemon_dataset/test/*
+inputs/lemon-quality-dataset/lemon_dataset/train/*
+outputs/v1/*
+outputs/v2/*
+outputs/v3/*
