@@ -49,6 +49,7 @@ Factory employees manually inspecting and separating the fruits based on a visua
 ## Machine Learning Model Iterations
 
 * The Tensorflow binary image classification model went through a series of iterations and hyperparameters in order to produce an optimised model capable of handling the data.
+* Before running each iteration of the model, the Keras Tuner
 
 * V1 -This model was only applied to the initial smaller uncombined single lemon dataset, with the images at their original average size (300, 300). While this model predicted classes with a great degree of accuracy (over 98%), the dataset was limited in size and expansion was required.
 
@@ -113,7 +114,8 @@ This iteration of the model performed successfully, with an average F1 score of 
 - Plotly - data visualisation
 - Tensorflow - image preprocessing, model building, hyperparameter tuning
 - Scikit-image - image processing/transformation
-- Rembg - data cleaning
+- [Rembg](https://github.com/danielgatis/rembg) - data cleaning
+- PIL Image - data cleaning
 
 ## Testing
 
