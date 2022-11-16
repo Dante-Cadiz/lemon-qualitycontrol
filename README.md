@@ -119,9 +119,11 @@ This iteration of the model performed successfully, with an average F1 score of 
 
 ## Bugs
 
-- Two associated bugs in production on Heroku where creating an image montage fails and throws a Syntax Error 'Not a PNG file', and .h5 file for model fails to load. 
+- Two associated bugs in production were found after the initial deployment on Heroku where creating an image montage fails and throws a Syntax Error 'Not a PNG file', and .h5 file for model fails to load. 
 - These were found to be because the input image files and .h5 model files were stored in Git LFS which Heroku does not support.
 - To fix this bug, I moved the files previously stored in LFS out of LFS and into regular Git storage.
+- Upon redeployment with the files relocated, deployment was initially rejected due to the compressed slug size being larger than Heroku's 500MB limit.
+- This was fixed by creating a .slugignore file that allowed Heroku to ignore most input images, as such only pushing a selection of the validation set input images to Heroku - still enough to create the image montage.
 
 ## Credits 
 
