@@ -2,6 +2,7 @@ inputs/lemon-quality-dataset/lemon_dataset/test/*
 inputs/lemon-quality-dataset/lemon_dataset/train/*
 inputs/lemon-quality-dataset/lemon_dataset/validation/bad_quality/????.png
 inputs/lemon-quality-dataset/lemon_dataset/validation/good_quality/????.png
+jupyter_notebooks/*
 outputs/v1/*
 outputs/v2/*
 outputs/v3/*
