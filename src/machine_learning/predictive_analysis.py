@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 from tensorflow.keras.models import load_model
-from rembg import remove
 from PIL import Image
 from typing import Tuple
 from src.data_management import load_pkl_file
@@ -36,16 +35,12 @@ def plot_predictions_probabilities(pred_proba: float, pred_class: str):
 
 
 
-def clean_input_image(img: np.ndarray, version: str) -> np.ndarray:  
+def resize_input_image(img: np.ndarray, version: str) -> np.ndarray:  
     """
     Rewrite this function to also preformat the image, or possibly just only allow input of the cleaned data
     """
     image_shape = load_pkl_file(file_path=f"outputs/{version}/image_shape.pkl")
-    removed = remove(img)
-    imageBox = removed.getbbox()
-    cropped = removed.crop(imageBox)
-    to_rgb = cropped.convert('RGB')
-    img_resized = to_rgb.resize((image_shape[1], image_shape[0]), Image.ANTIALIAS)
+    img_resized = img.resize((image_shape[1], image_shape[0]), Image.ANTIALIAS)
     my_image = np.expand_dims(img_resized, axis=0)/255
 
     return my_image

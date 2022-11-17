@@ -6,7 +6,7 @@ import pandas as pd
 from src.data_management import download_dataframe_as_csv
 from src.machine_learning.predictive_analysis import (
                                                     load_model_and_predict,
-                                                    clean_input_image,
+                                                    resize_input_image,
                                                     plot_predictions_probabilities
                                                     )
 
@@ -17,8 +17,13 @@ def page_lemon_quality_assessor_body():
         )
     
     st.write(
-        f"* Link for the lemon images will go here "
-        f"Figure out how to handle the data cleaning step"
+        f"* You can download the original two lemon datasets from the following Kaggle pages: "
+        f"https://www.kaggle.com/datasets/yusufemir/lemon-quality-dataset"
+        f"https://www.kaggle.com/datasets/maciejadamiak/lemons-quality-control-dataset"
+        f"* Before applying the model to these images, you will need to clean them "
+        f"using this external helper application"
+        f"* Clean your images here - https://lemon-image-cleaner.herokuapp.com/"
+        f"Once you have saved the cleaned images, upload them below."
         )
 
     st.write("---")
@@ -36,8 +41,8 @@ def page_lemon_quality_assessor_body():
             st.image(img_pil, caption=f"Image Size: {img_array.shape[1]}px width x {img_array.shape[0]}px height")
 
             version = 'v4'
-            cleaned_img = clean_input_image(img=img_pil, version=version)
-            pred_proba, pred_class = load_model_and_predict(cleaned_img, version=version)
+            resized_img = resize_input_image(img=img_pil, version=version)
+            pred_proba, pred_class = load_model_and_predict(resized_img, version=version)
             plot_predictions_probabilities(pred_proba, pred_class)
 
             df_report = df_report.append({"Name":image.name, 'Result': pred_class },
@@ -48,6 +53,3 @@ def page_lemon_quality_assessor_body():
             st.table(df_report)
             st.markdown(download_dataframe_as_csv(df_report), unsafe_allow_html=True)
 
-# This is the error that this function is currently throwing
-# raise ValueError( ValueError: Input 0 of layer sequential_1 is incompatible with the layer: expected axis -1 of input shape to have value 3 but received input with shape (None, 100, 100, 4)
-# The 4 is a RGBA value but the model expects RGB?

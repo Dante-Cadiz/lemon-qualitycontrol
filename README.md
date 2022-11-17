@@ -117,6 +117,11 @@ This iteration of the model performed successfully, with an average F1 score of 
 - [Rembg](https://github.com/danielgatis/rembg) - data cleaning
 - PIL Image - data cleaning
 
+## Other technologies used
+- Streamlit - dashboard development
+- Heroku - application deployment
+- Git/GitHub - version control
+
 ## Testing
 
 ## Bugs
