@@ -52,6 +52,8 @@ Factory employees manually inspecting and separating the fruits based on a visua
 
 * The Tensorflow binary image classification model went through a series of iterations and hyperparameters in order to produce an optimised model capable of handling the data.
 * Before running each iteration of the model, the most suitable hyperparameters out of a user-provided selection were attained using the Keras Tuner.
+* Two hyperparameters were selected in this search process for optimisation; the neuron count in the main densely connected layer of the neural network (varied between 64 and 512 with a step of 64 after V1), and the learning rate of the model (set to either 0.001 or 0.0001). 
+* 
 
 * V1 -This model was only applied to the initial smaller uncombined single lemon dataset, with the images at their original average size (300, 300). While this model predicted classes with a great degree of accuracy (over 98%), the dataset was limited in size and expansion was required.
 
@@ -79,8 +81,9 @@ As such, I hypothesised that the target imbalance of outcomes was significant.
 V4 - The process for the fourth and final iteration of the model began with changing the criteria for a bad quality lemon in the second dataset to all of gangrene, mould, blemishes, dark style remaining, and general illness. 
 This increased target imbalance greatly once again, so I considered a variety of options to remedy this, namely resampling of the minority class, undersampling of the majority class, performing SMOTE on the minority class, and adding skewed class weights to the model itself. I chose not to resample the minority class to avoid overfitting, and undersampling of the majority class was also undesirable due to the already somewhat limited nature of the dataset. Finally, SMOTE was considered unviable because of the lengthy time and computation process required to perform SMOTE on the NumPy arrays of the images.
 As such, I incorporated Scikit's utility for calculating class weights for the model to favour the minority class, and passed these calculations into the model using the class_weights hyperparameter, then performed hyperparameter optimisation with the Keras Tuner using these class weights, and ran the model with the same class weights. 
-This iteration of the model performed successfully, with an average F1 score of 0.96, as well as 99% recall on the bad quality class. It exceeded the predetermined thresholds for both recall on bad quality lemons and overall accuracy, and as such was accepted as the project's working model. 
+This iteration of the model performed successfully, with an average F1 score of 0.96, as well as 99% recall on the bad quality class. It exceeded the predetermined thresholds for both recall on bad quality lemons and overall accuracy. 
 
+V5 - Late in development, I realised a possible issue with the previous models, relating to the dataset itself. Upon analysing average images, I noticed circular patterns in the centre of the average image for those lemons labelled bad quality. I had initially hypothesised that these circles signified blemishes, but later I came to hypothesise that these may have in fact been the pedicels of the lemons. The second dataset which contained majority lemons labelled as bad quality was different to the first dataset in that it contained lemons photographed from many angles, including those in which the pedicel was pointed frontward in the direction of the camera. The first dataset only contained images in which the pedicel was at the side or obscured entirely. As such, I added a further data cleaning step to remove the images from the second dataset that were tagged as having a prominent pedicel, and combine those that were not with the first dataset. 
 
 
 
