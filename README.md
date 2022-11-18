@@ -16,18 +16,21 @@ Factory employees manually inspecting and separating the fruits based on a visua
 
 - As such, the project has the following business objectives:
 - The client is interested in analysing the visual difference between good and poor quality lemons, specifically the visual markers that define a poor quality lemon. This will be satisfied via conventional data analysis: finding the average image and variability per label in the data set, as well as the contrast between said labels.
-- The client is interested in accurately and instantly predicting from a given image whether a lemon is of good or poor quality. This business objective will be delivered by the development and deployment of a TensorFlow deep learning pipeline 
+- The client is interested in accurately and instantly predicting from a given image whether a lemon is of good or poor quality. This business objective will be delivered by the development and deployment of a TensorFlow deep learning pipeline which serves to perform a binary classification task on the lemon images.
 - The content satisfying these two business objectives will be combined into a Streamlit dashboard and delivered to stakeholders.
 
 ## Agile Development / User Stories
-- How are they fulfilled via dashboard
+- As a customer, I can navigate easily around the dashboard so that I can understand the data presented
+- As a customer, I can view and toggle visual graphs of average images and image variabilities so that I can observe the difference and understand the visual markers that indicate lemon quality better
+- As a customer, I can provide new raw data of a lemon and clean it so that I can run the provided model on it
+- As a customer, I can feed cleaned data to the dashboard to allow the model to predict on it so that I can discover whether a given lemon is of good or poor quality.
 
 ## Hypothesis and how to validate?
 * The project's initial hypothesis was for each business objective as follows:
-* There would be a clear and significant visual difference noticeable between the average and variability images for each label. This hypothesis would be validated through visual examination of the generated images, along with application of Sobel filtering to bring out defined areas of edges in the images and clearly illuminate these differences.
-* Providing a new lemon image and applying the project's generated binary classification model to it would allow the client to successfully predict the quality of 
-* Put info about typical lemon diseases/defects here
-* Validation accuracy
+* There would be a clear and significant visual difference noticeable between the average and variability images for each label, both in colour and texture. 
+* This hypothesis will be validated through visual examination of the generated images, along with application of Sobel filtering to bring out defined areas of edges in the images and clearly illuminate these differences.
+* Providing a new lemon image and applying the project's generated binary classification model to it would allow the client to predict the likely quality of a lemon to a high degree of accuracy.
+* This hypothesis will be validated through the testing and graphical evaluation of the generated model, specifically logging its validation accuracy and loss between epochs, as well as creating a confusion matrix between the two outcomes.
 
 
 ## Rationale to map the business requirements to the Data Visualizations and ML tasks
@@ -40,16 +43,15 @@ Factory employees manually inspecting and separating the fruits based on a visua
 - The eventual target of the machine learning pipeline is a binary classification label; good or poor quality.
 - The performance and quality of the model
  and its ability to identify and discern visual features that mark a bad quality lemon
-- The stakeholder has decided that the most important metric for evaluating the success of the machine learning model is recall on the negative results of a poor quality lemon. This is because providing possibly poor quality lemons to supermarkets is a worse outcome than mistakenly discarding good quality ones. A preliminary recall score threshold to assess the model's success has been set at 0.98.
-
-- Accuracy and F1 score will also be taken into consideration - with 95% accuracy as minimum threshold
+- The stakeholder has decided that the most important metric for evaluating the success of the machine learning model is recall on the negative results of a poor quality lemon. This is because providing possibly poor quality lemons to supermarkets and other subsequent companies involved in the supply chain is a worse outcome than mistakenly discarding good quality ones. A preliminary recall score threshold to assess the model's success has been set at 0.98.
+- The accuracy and F1 score will also be taken into consideration with a F1 score of 95% as minimum threshold
 - Output
 - Heuristic
 
 ## Machine Learning Model Iterations
 
 * The Tensorflow binary image classification model went through a series of iterations and hyperparameters in order to produce an optimised model capable of handling the data.
-* Before running each iteration of the model, the Keras Tuner
+* Before running each iteration of the model, the most suitable hyperparameters out of a user-provided selection were attained using the Keras Tuner.
 
 * V1 -This model was only applied to the initial smaller uncombined single lemon dataset, with the images at their original average size (300, 300). While this model predicted classes with a great degree of accuracy (over 98%), the dataset was limited in size and expansion was required.
 
