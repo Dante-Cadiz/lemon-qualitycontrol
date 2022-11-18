@@ -23,7 +23,9 @@ def page_lemon_quality_assessor_body():
         f"* Before applying the model to these images, you will need to clean them "
         f"using this external helper application"
         f"* Clean your images here - https://lemon-image-cleaner.herokuapp.com/"
-        f"Once you have saved the cleaned images, upload them below."
+        f"*Once you have saved the cleaned images, upload them below."
+        f"*Alternatively, you can download the cleaned images from the GitHub repo below: "
+        f"https://github.com/Dante-Cadiz/lemon-qualitycontrol/tree/main/inputs/lemon-quality-dataset/lemon_dataset"
         )
 
     st.write("---")
