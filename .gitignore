@@ -16,4 +16,3 @@ outputs/v3/hypertuning/*
 outputs/v3/lemon_quality_model.h5
 outputs/v4/hypertuning/*
 outputs/v5/hypertuning/*
-outputs/v5/lemon_quality_model.h5
