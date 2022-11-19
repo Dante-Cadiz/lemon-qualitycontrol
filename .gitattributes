@@ -1,3 +1,4 @@
 outputs/v1/lemon_quality_model.h5 filter=lfs diff=lfs merge=lfs -text
 outputs/v2/lemon_quality_model.h5 filter=lfs diff=lfs merge=lfs -text
 outputs/v3/lemon_quality_model.h5 filter=lfs diff=lfs merge=lfs -text
+outputs/v4/lemon_quality_model.h5 filter=lfs diff=lfs merge=lfs -text
