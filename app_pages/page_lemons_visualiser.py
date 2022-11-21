@@ -15,7 +15,7 @@ def page_lemons_visualiser_body():
         f"*The client is interested in analysing the visual difference between good and poor quality "
         f"lemons, specifically the visual markers for defects that define a poor quality lemon.")
     
-    version = 'v4'
+    version = 'v5'
     if st.checkbox("Difference between average and variability image"):
       
       avg_bad_quality = plt.imread(f"outputs/{version}/avg_var_bad_quality.png")

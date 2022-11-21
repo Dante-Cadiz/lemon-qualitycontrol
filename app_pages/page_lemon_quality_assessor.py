@@ -42,7 +42,7 @@ def page_lemon_quality_assessor_body():
             img_array = np.array(img_pil) # add reshape here to :3
             st.image(img_pil, caption=f"Image Size: {img_array.shape[1]}px width x {img_array.shape[0]}px height")
 
-            version = 'v4'
+            version = 'v5'
             resized_img = resize_input_image(img=img_pil, version=version)
             pred_proba, pred_class = load_model_and_predict(resized_img, version=version)
             plot_predictions_probabilities(pred_proba, pred_class)
