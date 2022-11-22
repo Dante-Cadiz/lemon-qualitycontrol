@@ -129,20 +129,23 @@ This
 ## Main Data Analysis and Machine Learning Libraries
 * Here you should list the libraries you used in the project and provide example(s) on how you used these libraries.
 
-- Numpy
-- Pandas
-- Matplotlib
-- Seaborn - data visualisation
-- Plotly - data visualisation
-- Tensorflow - image preprocessing, model building, hyperparameter tuning
-- Scikit-image - image processing/transformation
+- [Numpy](https://numpy.org/)
+- [Pandas](https://pandas.pydata.org/)
+- [Matplotlib](https://matplotlib.org/)
+- [Seaborn](https://seaborn.pydata.org/) - data visualisation
+- [Plotly](https://plotly.com/python/) - data visualisation
+- [TensorFlow](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf) - image preprocessing, model building, hyperparameter tuning
+- [Keras Tuner](https://keras.io/keras_tuner/)
+- [Pycocotools](https://github.com/cocodataset/cocoapi/tree/master/PythonAPI/pycocotools)
+- [Scikit-learn](https://scikit-learn.org/)
+- [Scikit-image](https://scikit-image.org/)
 - [Rembg](https://github.com/danielgatis/rembg) - data cleaning
-- PIL Image - data cleaning
+- [PIL Image](https://pillow.readthedocs.io/en/stable/reference/Image.html)
 
 ## Other technologies used
-- Streamlit - dashboard development
-- Heroku - application deployment
-- Git/GitHub - version control
+- [Streamlit](https://streamlit.io/) - dashboard development
+- [Heroku](https://www.heroku.com/) - application deployment
+- [Git/GitHub](https://github.com/) - version control
 
 ## Testing
 
@@ -165,7 +168,7 @@ This
 
 - Much of the project's functions came from Code Institute's sample Malaria Detector project, along with inspiration for the workflow direction
 - Code for calculating class weights came from [this StackOverflow answer](https://stackoverflow.com/questions/42586475/is-it-possible-to-automatically-infer-the-class-weight-from-flow-from-directory/67678399#67678399)
-- Information about typical lemon defects and testing methods during quality control came from [Clarifruit](https://www.clarifruit.com/knowledge-base/fresh-produce-categories/lemons/)
+- Information about typical lemon defects and testing methods/metrics during quality control came from [Clarifruit](https://www.clarifruit.com/knowledge-base/fresh-produce-categories/lemons/) and the UK Government's [Specific Marketing Standards](https://www.gov.uk/guidance/comply-with-marketing-standards-for-fresh-fruit-and-vegetables)
 - The workflow for hyperparameter tuning was adapted from TensorFlow's [Keras Tuner Tutorial](https://www.tensorflow.org/tutorials/keras/keras_tuner)
 
 ### Media
@@ -174,6 +177,7 @@ This
 
 
 
-## Acknowledgements (optional)
-* In case you would like to thank the people that provided support through this project.
+## Acknowledgements 
+* My mentor, Mo Shami, fir supervising this project
+* The #project-portfolio-5-predictive-analytics channel on Slack and especially the ode Institute Tutors who participate there for providing technical advice
 
