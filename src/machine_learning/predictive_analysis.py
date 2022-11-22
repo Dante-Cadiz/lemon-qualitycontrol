@@ -37,7 +37,7 @@ def plot_predictions_probabilities(pred_proba: float, pred_class: str):
 
 def resize_input_image(img: np.ndarray, version: str) -> np.ndarray:  
     """
-    Rewrite this function to also preformat the image, or possibly just only allow input of the cleaned data
+    Resize input image to specified dimensions based on image shape pickle file from chosen version
     """
     image_shape = load_pkl_file(file_path=f"outputs/{version}/image_shape.pkl")
     img_resized = img.resize((image_shape[1], image_shape[0]), Image.ANTIALIAS)
