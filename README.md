@@ -12,7 +12,9 @@ The project also contains a functional pipeline in the form of three Jupyter not
 ## Business Requirements
 * The stakeholder for this project is the owner of a small-scale commerical fruit preparation factory that supplies local markets. 
 * The factory handles and processes fruit delivered from local farms to ensure it is ready for supermarket display and sale. 
+
 Heuristic
+
 - The factory's current process for separating its lemons into those suitable and unsuitable for retail currently involves: 
 Conveyor belt machinery that measures diameter
 Performing chemical tests such as ripening gas concentration, determination of percentage juice content, and assessment for common types of rot
