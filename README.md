@@ -24,23 +24,23 @@ Factory employees manually inspecting and separating the fruits based on a visua
 - The client is interested in accurately and instantly predicting from a given image whether a lemon is of good or poor quality. This business objective will be delivered by the development and deployment of a TensorFlow deep learning pipeline which serves to perform a binary classification task on the lemon images.
 - The content satisfying these two business objectives will be combined into a Streamlit dashboard and delivered to stakeholders.
 
-## Agile Development / User Stories
-- As a customer, I can navigate easily around the dashboard so that I can understand the data presented
-- As a customer, I can view and toggle visual graphs of average images and image variabilities so that I can observe the difference and understand the visual markers that indicate lemon quality better
-- As a customer, I can provide new raw data of a lemon and clean it so that I can run the provided model on it
-- As a customer, I can feed cleaned data to the dashboard to allow the model to predict on it so that I can discover whether a given lemon is of good or poor quality.
+## Rationale to map the business requirements to the Data Visualizations and ML tasks
+
+Business Requirement 1:
+- As a client, I can navigate easily around an interactive dashboard so that I can view and understand the data presented.
+- As a client, I can view and toggle visual graphs of average images and image variabilities for both good and bad quality lemons so that I can observe the difference and understand the visual markers that indicate lemon quality better.
+- As a client, I can view an image montage of either good or bad quality lemons so that I can visually differentiate them.
+
+Business Requirement 2:
+- As a client, I can provide new raw data of a lemon and clean it so that I can run the provided model on it
+- As a client, I can feed cleaned data to the dashboard to allow the model to predict on it so that I can discover whether a given lemon is of good or poor quality.
 
 ## Hypothesis and how to validate?
 * The project's initial hypothesis was for each business objective as follows:
-* There would be a clear and significant visual difference noticeable between the average and variability images for each label, both in colour and texture. 
+* We suspect that there would be a clear and significant visual difference noticeable between the average and variability images for each label, both in colour and texture, with bad quality lemons presenting areas of discoloration and contouring compared to smooth and plain yellow good quality lemon average images.
 * This hypothesis will be validated through visual examination of the generated images, along with application of Sobel filtering to bring out defined areas of edges in the images and clearly illuminate these differences.
 * Providing a new lemon image and applying the project's generated binary classification model to it would allow the client to predict the likely quality of a lemon to a high degree of accuracy.
 * This hypothesis will be validated through the testing and graphical evaluation of the generated model, specifically logging its validation accuracy and loss between epochs, as well as creating a confusion matrix between the two outcomes.
-
-
-## Rationale to map the business requirements to the Data Visualizations and ML tasks
-* List your business requirements and a rationale to map them to the Data Visualizations and ML tasks
-- The client is interested in defining and analysing the visual difference between good and poor quality lemons. This will be satisfied via conventional data analysis: finding the average image and variability per label in the data set, as well as the contrast between said labels.
 
 ## ML Business Case
 * In the previous bullet, you potentially visualized a ML task to answer a business requirement. You should frame the business case using the method we covered in the course 
@@ -56,6 +56,7 @@ Factory employees manually inspecting and separating the fruits based on a visua
 ## Machine Learning Model Iterations
 
 * The Tensorflow binary image classification model went through a series of iterations and hyperparameters in order to produce an optimised model capable of handling the data.
+* The model was constructed of three consecutive pairs of 2D convolution and pooling layers, followed by a single dense layer of many neurons (128 in the final production model), a dropout layer of 0.5 in order to avoid overfitting of the model, and a final dense layer containing a single neuron with a sigmoid activation function, as is standard for binary classification models.
 * Before running each iteration of the model, the most suitable hyperparameters out of a user-provided selection were attained using the Keras Tuner.
 * Two hyperparameters were selected in this search process for optimisation; the neuron count in the main densely connected layer of the neural network (varied between 64 and 512 with a step of 64 after V1), and the learning rate of the model (set to either 0.001 or 0.0001). 
 * 
@@ -88,13 +89,24 @@ This increased target imbalance greatly once again, so I considered a variety of
 As such, I incorporated Scikit's utility for calculating class weights for the model to favour the minority class, and passed these calculations into the model using the class_weights hyperparameter, then performed hyperparameter optimisation with the Keras Tuner using these class weights, and ran the model with the same class weights. 
 This iteration of the model performed successfully, with an average F1 score of 0.96, as well as 99% recall on the bad quality class. It exceeded the predetermined thresholds for both recall on bad quality lemons and overall accuracy. 
 
-V5 - Late in development, I realised a possible issue with the previous models, relating to the dataset itself. Upon analysing average images, I noticed circular patterns in the centre of the average image for those lemons labelled bad quality. I had initially hypothesised that these circles signified blemishes, but later I came to hypothesise that these may have in fact been the pedicels of the lemons. The second dataset which contained majority lemons labelled as bad quality was different to the first dataset in that it contained lemons photographed from many angles, including those in which the pedicel was pointed frontward in the direction of the camera. The first dataset only contained images in which the pedicel was at the side or obscured entirely. As such, I added a further data cleaning step to remove the images from the second dataset that were tagged as having a prominent pedicel, and combine those that were not with the first dataset. 
+V5 - Late in development, I realised a possible issue with the previous models, relating to the dataset itself. Upon analysing average images, I noticed circular patterns in the centre of the average image for those lemons labelled bad quality. I had initially hypothesised that these circles signified blemishes, but later I came to hypothesise that these may have in fact been the pedicels of the lemons. The pedicel of the lemon is simply the part of the fruit which once connected it to the tree it grew on, and not an indicator of quality one way or another, and as such having the model possibly identifying pedicel areas of images as a factor to predict class on was problematic. The second dataset which contained majority lemons labelled as bad quality was different to the first dataset in that it contained lemons photographed from many angles, including those in which the pedicel was pointed frontward in the direction of the camera. The first dataset only contained images in which the pedicel was at the side or obscured entirely. As such, I added a further data cleaning step to remove the images from the second dataset that were tagged as having a prominent pedicel, and combine those that were not with the first dataset. 
+This 
 
 
 
-## Dashboard Design
-* List all dashboard pages and its content, either block of information or widgets, like: buttons, checkbox, image, or any other item that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a give feature (for example, in the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
+## Dashboard Design and Features
+
+### General application design and home page
+
+### Presentation of data visualisation plots
+
+### Lemon Quality Assessor tool
+
+### Lemon Image Cleaner tool
+
+### Project Hypothesis 
+
+### Machine learning performance evaluation
 
 
 
@@ -136,23 +148,25 @@ V5 - Late in development, I realised a possible issue with the previous models, 
 
 ## Bugs
 
+- This project had a major dependency conflict in which the Rembg package required to remove image backgrounds and isolate foreground elements had two key conflicts.
+- The first conflict was with TensorFlow version 2.6.0; Rembg required Numpy 1.21.6 while TensorFlow 2.6.0 required a 1.19 version of Numpy. The second conflict was with Streamlit 0.85.0, as Rembg required Click 8.1.3 while Streamlit only supported versions of Click from 7.0 to 8.0. 
+- The production solution to these conflicts was to separate the image cleaning process for user submitted images that involved Rembg into a side helper application; [Lemon Image Cleaner](https://lemon-image-cleaner.herokuapp.com/). This was deployed on a later version of Streamlit compatible with the version of Click required for Rembg, along with using the requisite Numpy 1.21.6 version. The user can open this helper application which performs data cleaning tasks on their raw data, then save the images and upload them to the main application for a model prediction.
 - Two associated bugs in production were found after the initial deployment on Heroku where creating an image montage fails and throws a Syntax Error 'Not a PNG file', and .h5 file for model fails to load. 
 - These were found to be because the input image files and .h5 model files were stored in Git LFS which Heroku does not support.
 - To fix this bug, I moved the files previously stored in LFS out of LFS and into regular Git storage.
 - Upon redeployment with the files relocated, deployment was initially rejected due to the compressed slug size being larger than Heroku's 500MB limit.
 - This was fixed by creating a .slugignore file that allowed Heroku to ignore most input images, as such only pushing a selection of the validation set input images to Heroku - still enough to create the image montage.
 
+
 ## Credits 
 
-* In this section you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
 
 ### Content 
 
 - Much of the project's functions came from Code Institute's sample Malaria Detector project, along with inspiration for the workflow direction
 - Code for calculating class weights came from [this StackOverflow answer](https://stackoverflow.com/questions/42586475/is-it-possible-to-automatically-infer-the-class-weight-from-flow-from-directory/67678399#67678399)
 - Information about typical lemon defects and testing methods during quality control came from [Clarifruit](https://www.clarifruit.com/knowledge-base/fresh-produce-categories/lemons/)
-- The workflow for hyperparameter tuning was adapted from
+- The workflow for hyperparameter tuning was adapted from TensorFlow's [Keras Tuner Tutorial](https://www.tensorflow.org/tutorials/keras/keras_tuner)
 
 ### Media
 
