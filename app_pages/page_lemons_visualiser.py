@@ -23,11 +23,10 @@ def page_lemons_visualiser_body():
 
       st.warning(
         f"* We notice the average and variability images didn't show "
-        f"patterns where we could intuitively differentiate one to another."
+        f"patterns where we could intuitively differentiate one to another.\n"
         f"* Applying Sobel edge detection filters to the images was also unsuccessful in illustrating " 
         f"a clear visual divide between these average and variability images."
-        f"However, a small difference in color pigment of the average images is seen for both labels "
-        f"with the bad quality lemon average having areas of grey coloration.")
+        )
 
       st.image(avg_bad_quality, caption='Bad Quality Lemon - Average and Variability')
       st.image(avg_good_quality, caption='Good Quality Lemon - Average and Variability')
@@ -38,7 +37,7 @@ def page_lemons_visualiser_body():
 
           st.warning(
             f"* We notice this study didn't show "
-            f"patterns where we could intuitively differentiate one to another."
+            f"patterns where we could intuitively differentiate one to another.\n"
             f"* While there is an area of difference shown on the left of the lemon, "
             f"this was hypothesised to be due to a difference in photographic lighting between the "
             f"two image datasets used, one of which contained a large majority of defective lemons")
