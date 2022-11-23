@@ -8,10 +8,21 @@ def page_summary_body():
 
     st.info(
         f"**General Information**\n"
+        f"* Quality control is an essential part of preparation of fruits for commercial retail "
+        f"that takes place in factories."
+        f"*This process is multi-faceted and typically involves chemically testing samples of "
+        f"the produce, measurements of fruit shape, and visual examination of the fruits for illness "
+        f"and blemishes."
+        f"* These processes take place to satisfy local/national government regulations regarding the "
+        f"quality and condition of produce, typically using a 'class' based evaluation system."
+        f"**Project Dataset**\n"
+        f"* The available dataset is a combination of two externally sourced datasets of close-up "
+        f"images of single lemons that are labelled based on their determined quality."
+        f"The production dataset for this project contains a subset of 3521 of these images in total"
     )
 
     st.write(
-        f"* For additional information, please visit and **read** the "
+        f"* For additional information (particularly regarding the dataset and data preparation), please visit the "
         f"[Project README file](https://github.com/Dante-Cadiz/lemon-qualitycontrol/blob/main/README.md).")
         
     
