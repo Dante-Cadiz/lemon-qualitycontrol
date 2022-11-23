@@ -100,17 +100,34 @@ This additional data cleaning step proved effective both in reducing the potenti
 
 ### General application design and home page
 
+![Interactive Menu](https://i.imgur.com/NVIiuwk.png)
+![Full page layout with menu and project summary](https://i.imgur.com/ENa74AP.png)
+
 ### Presentation of data visualisation plots
+
+![Average and variability of images example](https://i.imgur.com/EyEADjt.png)
+![Difference between average and variability of images](https://i.imgur.com/3D4JndY.png)
+![Image montage creation tool](https://i.imgur.com/iDcbtOS.png)
 
 ### Lemon Quality Assessor tool
 
+![Dataset links and upload option](https://i.imgur.com/gjVGaU8.png)
+![Example of processing of uploaded file](https://i.imgur.com/xCj9Amg.png)
+![Graphical representation of prediction](https://i.imgur.com/yXKLZFL.png)
+
 ### Lemon Image Cleaner tool
+
+** sort this out
 
 ### Project Hypothesis 
 
+![Project hypothesis section](https://i.imgur.com/iQBsGhw.png)
+
 ### Machine learning performance evaluation
 
-
+![Label frequencies charts](https://i.imgur.com/lisrpIT.png)
+![Model history plots](https://i.imgur.com/O2QJPRW.png)
+![Test set confusion matrix](https://i.imgur.com/zf0CaYm.png)
 
 ## Unfixed Bugs
 * 

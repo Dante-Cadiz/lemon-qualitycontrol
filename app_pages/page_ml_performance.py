@@ -28,4 +28,4 @@ def page_ml_performance_metrics():
     st.write("### Generalised Performance on Test Set")
     st.dataframe(pd.DataFrame(load_test_evaluation(version), index=['Loss', 'Accuracy']))
     confusion_matrix = plt.imread(f"outputs/{version}/confusion_matrix.png")
-    st.image(confusion_matrix, caption="Confusion Matrix")
+    st.image(confusion_matrix, caption="Confusion Matrix", width=500)

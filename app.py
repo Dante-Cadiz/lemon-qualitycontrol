@@ -11,7 +11,7 @@ from app_pages.page_ml_performance import page_ml_performance_metrics
 app = MultiPage(app_name= "Lemon Quality Control") # Create an instance of the app 
 
 # Add your app pages here using .add_page()
-app.add_page("Quick Project Summary", page_summary_body)
+app.add_page("Project Summary", page_summary_body)
 app.add_page("Lemons Visualiser", page_lemons_visualiser_body)
 app.add_page("Lemon Quality Assessor", page_lemon_quality_assessor_body)
 app.add_page("Project Hypothesis", page_project_hypothesis_body)

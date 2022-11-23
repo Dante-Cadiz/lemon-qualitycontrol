@@ -17,14 +17,14 @@ def page_lemon_quality_assessor_body():
         )
     
     st.write(
-        f"* You can download the original two lemon datasets from the following Kaggle pages: "
-        f"https://www.kaggle.com/datasets/yusufemir/lemon-quality-dataset"
-        f"https://www.kaggle.com/datasets/maciejadamiak/lemons-quality-control-dataset"
+        f"* You can download the original two lemon datasets from the following Kaggle pages: \n"
+        f"* https://www.kaggle.com/datasets/yusufemir/lemon-quality-dataset \n"
+        f"* https://www.kaggle.com/datasets/maciejadamiak/lemons-quality-control-dataset \n"
         f"* Before applying the model to these images, you will need to clean them "
         f"using this external helper application.\n"
-        f"* Clean your images here - https://lemon-image-cleaner.herokuapp.com/"
-        f"* Once you have saved the cleaned images, upload them below."
-        f"* Alternatively, you can download the cleaned images from the GitHub repo below: "
+        f"* Clean your images here - https://lemon-image-cleaner.herokuapp.com/ \n"
+        f"* Once you have saved the cleaned images, upload them below. \n"
+        f"* Alternatively, you can download the cleaned images from the GitHub repo below: \n"
         f"https://github.com/Dante-Cadiz/lemon-qualitycontrol/tree/main/inputs/lemon-quality-dataset/lemon_dataset"
         )
 

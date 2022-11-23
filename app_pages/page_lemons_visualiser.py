@@ -12,7 +12,7 @@ import random
 def page_lemons_visualiser_body():
     st.write("### Lemons Visualizer")
     st.info(
-        f"*The client is interested in analysing the visual difference between good and poor quality "
+        f"* The client is interested in analysing the visual difference between good and poor quality "
         f"lemons, specifically the visual markers for defects that define a poor quality lemon.")
     
     version = 'v5'
@@ -40,7 +40,7 @@ def page_lemons_visualiser_body():
             f"patterns where we could intuitively differentiate one to another.\n"
             f"* While there is an area of difference shown on the left of the lemon, "
             f"this was hypothesised to be due to a difference in photographic lighting between the "
-            f"two image datasets used, one of which contained a large majority of defective lemons")
+            f"two image datasets used, one of which contained a large majority of defective lemons.")
           st.image(diff_between_avgs, caption='Difference between average images')
 
     if st.checkbox("Image Montage"): 
