@@ -29,3 +29,11 @@ def page_ml_performance_metrics():
     st.dataframe(pd.DataFrame(load_test_evaluation(version), index=['Loss', 'Accuracy']))
     confusion_matrix = plt.imread(f"outputs/{version}/confusion_matrix.png")
     st.image(confusion_matrix, caption="Confusion Matrix", width=500)
+
+    st.write(f"* The overall accuracy of 0.9646, as well as a recall score "
+             f"on the negative outcome of a bad quality lemon of 0.98 indicate that "
+             f"this machine learning model is successful in detrmining the quality of a "
+             f"lemon, and conforms with the success metrics as defined in the ML " 
+             f"business requirements of an F1 score of 0.95 or higher and a recall on "
+             f"bad quality lemons of 0.98 or higher"
+    )

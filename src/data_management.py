@@ -5,7 +5,7 @@ import base64
 from datetime import datetime
 import joblib
 
-def download_dataframe_as_csv(df):
+def download_dataframe_as_csv(df: pd.DataFrame) -> str:
     datetime_now = datetime.now().strftime("%d%b%Y_%Hh%Mmin%Ss")
     csv = df.to_csv().encode()
     b64 = base64.b64encode(csv).decode()
@@ -16,5 +16,5 @@ def download_dataframe_as_csv(df):
     return href
 
 
-def load_pkl_file(file_path):
+def load_pkl_file(file_path: str):
     return joblib.load(filename=file_path)
