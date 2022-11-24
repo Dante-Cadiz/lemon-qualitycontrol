@@ -14,10 +14,10 @@ The project also contains a functional pipeline in the form of three Jupyter not
 * The factory handles and processes fruit delivered from local farms to ensure it is ready for supermarket display and sale. 
 
 - The factory's current process for separating its lemons into those suitable and unsuitable for retail currently involves: 
-Conveyor belt machinery that measures diameter of lemons to check it is within acceptable bounds
-Performing chemical tests such as ripening gas concentration, determination of percentage juice content, and assessment for common types of rot
+- Conveyor belt machinery that measures diameter of lemons to check it is within acceptable bounds
+- Performing chemical tests such as ripening gas concentration, determination of percentage juice content, and assessment for common types of rot
 - Factory employees manually inspecting and separating the fruits based on a visual assessment of blemishes and overall skin quality. This inspection is time-consuming and volatile in terms of employee mistakes, and requires extensive employee training, and is as such not scalable to a larger sphere. 
-- The factory owner wants to eliminate this final process and replace it with an ML process that instantly assesses lemon images, speeding the overall preparation of lemons up and removing reliance on individual human judgement and susceptibility to error. If this process is assessed as successful and efficient for lemons, it could be extended to the factory's preparation of other fruits, thus improving overall output efficiency greatly
+- The factory owner wants to eliminate this final process and replace it with an ML process that instantly assesses lemon images, speeding the overall preparation of lemons up and removing reliance on individual human judgement and susceptibility to error. If this process is assessed as successful and efficient for lemons, it could be extended to the factory's preparation of other fruits, thus improving overall output efficiency greatly.
 
 - As such, the project has the following business objectives:
 - The client is interested in analysing the visual difference between good and poor quality lemons, specifically the visual markers that define a poor quality lemon. This will be satisfied via conventional data analysis: finding the average image and variability per label in the data set, as well as the contrast between said labels.
@@ -100,33 +100,45 @@ This additional data cleaning step proved effective both in reducing the potenti
 
 ### General application design and home page
 
+This project is delivered via a Streamlit dashboard web application containing five app pages. The client can easily navigate between these pages via the interactive menu present on the left of the page, as seen below.
 ![Interactive Menu](https://i.imgur.com/NVIiuwk.png)
+The project's home page contains a basic summary of the business process driving this project's creation, along with links to further documentation about the project.
 ![Full page layout with menu and project summary](https://i.imgur.com/ENa74AP.png)
 
 ### Presentation of data visualisation plots
 
+The Lemons Visualiser page covers the first Data Analysis business objective of the project. It contains toggle-able plots that can easily be opened and closed via the inbuilt toolbar, examples of which are below.
 ![Average and variability of images example](https://i.imgur.com/EyEADjt.png)
 ![Difference between average and variability of images](https://i.imgur.com/3D4JndY.png)
+This app page also contains an image montage creation tool, where the user can slect a class of label for which to display a montage generated via graphical presentation of random validation set images.
 ![Image montage creation tool](https://i.imgur.com/iDcbtOS.png)
 
 ### Lemon Quality Assessor tool
 
+The Lemon Quality Assessor tool covers the second ML business objective of the project. It contains links to the original raw datasets from which the user can download lemon images and clean them via the Lemon Image Cleaner side tool (which is discussed below). They can then subsequently upload these images to receive a class prediction output made via the model.
 ![Dataset links and upload option](https://i.imgur.com/gjVGaU8.png)
+Below are examples of the outputs received when uploading a file; namely a binary class prediction along with graphical representation of percentages and an option to download the output DataFrame as a timestamped CSV file.
 ![Example of processing of uploaded file](https://i.imgur.com/xCj9Amg.png)
 ![Graphical representation of prediction](https://i.imgur.com/yXKLZFL.png)
 
 ### Lemon Image Cleaner tool
 
-** sort this out
+This side tool was incorporated into this project due to a dependency conflict discussed in the Bugs section of this README. It allows the user to upload raw data and outputs a cleaned image ready for model prediction.
+![Lemon image cleaner home page and upload](https://i.imgur.com/wooRG4B.png)
+![Lemon image upload outputs](https://i.imgur.com/z9rZPrg.png)
 
 ### Project Hypothesis 
 
+This app page displays textual documentation of th projct's hypotheses and analysis of the results and how they align with said hypotheses.
 ![Project hypothesis section](https://i.imgur.com/iQBsGhw.png)
 
 ### Machine learning performance evaluation
 
+This page documents the dataset size and label frequencies, along with history and evaluation of the project's machine learning model.
 ![Label frequencies charts](https://i.imgur.com/lisrpIT.png)
+The history of the model by epoch, specifically the validation loss and accuracy per epoch, is displayed in these paired graphs.
 ![Model history plots](https://i.imgur.com/O2QJPRW.png)
+A confusion matrix for predicted and actual outcomes for the test set is shown here.
 ![Test set confusion matrix](https://i.imgur.com/zf0CaYm.png)
 
 ## Unfixed Bugs
@@ -139,27 +151,32 @@ This additional data cleaning step proved effective both in reducing the potenti
 * The project was deployed to Heroku using the following steps.
 
 1. Log in to Heroku and create an App with desired name
-2. Log into Heroku CLI in IDE workspace terminal
-3. 
-4. 
-5. 
+2. Log into Heroku CLI in IDE workspace terminal using the bash command: *heroku login -i* and enter user credentials
+3. Clone the source code using the bash commands *heroku git:clone -a APP-NAME* followed by *cd APP-NAME*
+4. Set the app's stack to heroku-20 using the bash command: *heroku stack:set heroku-20* for compatibility purposes
+5. Deploy the application to Heroku using the following bash command: *git push heroku main --no-verify*
+
+### Forking the GitHub Project
+To make a copy of the GitHub repository to use on your own account, one can fork the repository by doing as follows:
+
+* On the page for the repository, go to the 'Fork' button on the top right of the page, and click it to create a copy of the repository which should then be on your own GitHub account.
 
 
 ## Main Data Analysis and Machine Learning Libraries
 * Here you should list the libraries you used in the project and provide example(s) on how you used these libraries.
 
 - [NumPy](https://numpy.org/) - Processing of images via conversion to NumPy arrays. Many other libraries used in this project are also dependent on NumPy
-- [Pandas](https://pandas.pydata.org/) - Conversion of numrical data into DataFrames to facilitate functional operations
-- [Matplotlib](https://matplotlib.org/) - Reading and processing image data, producing graphs
-- [Seaborn](https://seaborn.pydata.org/) - Data visualisation and presentation, such as the confusion matrix heatmap.
+- [Pandas](https://pandas.pydata.org/) - Conversion of numerical data into DataFrames to facilitate functional operations
+- [Matplotlib](https://matplotlib.org/) - Reading, processing, and displaying image data, producing graphs of tabular data
+- [Seaborn](https://seaborn.pydata.org/) - Data visualisation and presentation, such as the confusion matrix heatmap and image dimensions scatter plot.
 - [Plotly](https://plotly.com/python/) - Graphical visualisation of data, used in particular on dashboard for interactive charts
 - [TensorFlow](https://www.tensorflow.org/versions/r2.6/api_docs/python/tf) - Machine learning library used to build model
 - [Keras Tuner](https://keras.io/keras_tuner/) - Tuning of hyperparameters to find best combination for model accuracy
 - [Pycocotools](https://github.com/cocodataset/cocoapi/tree/master/PythonAPI/pycocotools) - Reading of annotations of COCO dataset and sorting images by annotations
-- [Scikit-learn](https://scikit-learn.org/) - Application of Sobel filters to image averages to detect edges and dominant features
-- [Scikit-image](https://scikit-image.org/)
-- [Rembg](https://github.com/danielgatis/rembg) - data cleaning
-- [PIL Image](https://pillow.readthedocs.io/en/stable/reference/Image.html)
+- [Scikit-learn](https://scikit-learn.org/) - Calculating class weights to handle target imbalance
+- [Scikit-image](https://scikit-image.org/) - Application of Sobel filters to image averages to detect edges and dominant features
+- [Rembg](https://github.com/danielgatis/rembg) - Used in data cleaning for removal of background elements for raw image data
+- [PIL Image](https://pillow.readthedocs.io/en/stable/reference/Image.html) - Used in data cleaning to get bounding boxes of foreground image elements and crop images to thes bounding boxes
 
 ## Other technologies used
 - [Streamlit](https://streamlit.io/) - Development of dashboard for presentation of data and project delivery
@@ -168,8 +185,9 @@ This additional data cleaning step proved effective both in reducing the potenti
 
 ## Testing
 
-This projct underwent extensive manual testing
+This project underwent extensive manual testing
 PEP8 validation
+*Write a few automated tests
 
 ## Bugs
 
