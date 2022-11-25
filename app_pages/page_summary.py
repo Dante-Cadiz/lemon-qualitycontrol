@@ -29,7 +29,7 @@ def page_summary_body():
         f"and data preparation), please visit the [Project README file]"
         f"(https://github.com/Dante-Cadiz/lemon-qualitycontrol/blob/main"
         f"/README.md).")
-        
+
     st.success(
         f"The project has 2 business requirements:\n"
         f"* 1 - The client is interested in analysing the visual difference "
@@ -37,5 +37,4 @@ def page_summary_body():
         f"markers for defects that define a poor quality lemon.\n"
         f"* 2 - The client is interested in accurately and instantly "
         f" predicting from a given image whether a lemon is of good or poor "
-        f"quality."
-        )
+        f"quality.")
