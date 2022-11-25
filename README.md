@@ -147,7 +147,7 @@ This additional data cleaning step proved effective both in reducing the potenti
 ![Test set confusion matrix](https://i.imgur.com/zf0CaYm.png)
 
 ## Unfixed Bugs
-* 
+* There are currently no unfixed bugs in this project
 
 ## Deployment
 ### Heroku
@@ -157,15 +157,22 @@ This additional data cleaning step proved effective both in reducing the potenti
 
 1. Log in to Heroku and create an App with desired name
 2. Log into Heroku CLI in IDE workspace terminal using the bash command: *heroku login -i* and enter user credentials
-3. Clone the source code using the bash commands *heroku git:clone -a APP-NAME* followed by *cd APP-NAME*
-4. Set the app's stack to heroku-20 using the bash command: *heroku stack:set heroku-20* for compatibility purposes
-5. Deploy the application to Heroku using the following bash command: *git push heroku main --no-verify*
+3. Run the command *git init* to re-initialise the Git repository
+4.
+5. Set the app's stack to heroku-20 using the bash command: *heroku stack:set heroku-20* for compatibility purposes
+6. Deploy the application to Heroku using the following bash command: *git push heroku main --no-verify* . The --no-verify flag is used to
 
 ### Forking the GitHub Project
 To make a copy of the GitHub repository to use on your own account, one can fork the repository by doing as follows:
 
-* On the page for the repository, go to the 'Fork' button on the top right of the page, and click it to create a copy of the repository which should then be on your own GitHub account.
+* On the page for the [repository](https://github.com/Dante-Cadiz/lemon-qualitycontrol), go to the 'Fork' button on the top right of the page, and click it to create a copy of the repository which should then be on your own GitHub account.
 
+### Making a Local Clone
+
+* On the page for the [repository](https://github.com/Dante-Cadiz/lemon-qualitycontrol), click the 'Code' button
+* To clone the repository using HTTPS, copy the HTTPS URL provided there
+* Open your CLI application of choice and change the current working directory to the location where you want the cloned directory to be made.
+* Type git clone, and then paste the previously copied URL to create the clone
 
 ## Main Data Analysis and Machine Learning Libraries
 * Here you should list the libraries you used in the project and provide example(s) on how you used these libraries.
@@ -190,9 +197,17 @@ To make a copy of the GitHub repository to use on your own account, one can fork
 
 ## Testing
 
-This project underwent extensive manual testing
-PEP8 validation
-*Write a few automated tests
+### Manual Testing
+* add this
+
+### Validation
+- All of the Python code in this project was validated as conforming to PEP8 standards via installation of the pycodestyle package in the workspace terminal via *pip install pycodestyle*
+- For the cells of the Jupyter notebooks, an additional step was required of temporarily adding two code cells atop each notebook containing the following code: *%load_ext pycodestyle_magic* and *%pycodestyle_on* .
+- I subsequently reran the cells and edited them according to the errors that were documented there.
+- For the Streamlit app pages and source code files, I simply edited the code until no errors were recorded in the Problems section of the GitPod workspace
+
+### Automated Unit Tests
+- This project does not currently contain automated unit tests. In future
 
 ## Bugs
 
