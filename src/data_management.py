@@ -23,4 +23,7 @@ def download_dataframe_as_csv(df: pd.DataFrame) -> str:
 
 
 def load_pkl_file(file_path: str):
+    '''
+    Loads pickle file
+    '''
     return joblib.load(filename=file_path)
