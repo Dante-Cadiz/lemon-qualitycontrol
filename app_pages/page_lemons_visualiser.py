@@ -40,8 +40,12 @@ def page_lemons_visualiser_body():
             f"patterns where we could intuitively differentiate one to another.\n"
             f"* While there is an area of difference shown on the left of the lemon, "
             f"this was hypothesised to be due to a difference in photographic lighting between the "
-            f"two image datasets used, one of which contained a large majority of defective lemons.")
-          st.image(diff_between_avgs, caption='Difference between average images')
+            f"two image datasets used, one of which contained a large majority of defective lemons."
+            f"This difference will not affect the machine learning model's "
+            f"performance, as the ImageDataGenerator task contains flipping "
+            f"and rotation of images.")
+          st.image(diff_between_avgs, 
+                   caption='Difference between average images')
 
     if st.checkbox("Image Montage"): 
       st.write("* To refresh the montage, click on 'Create Montage' button")
