@@ -158,9 +158,9 @@ This additional data cleaning step proved effective both in reducing the potenti
 1. Log in to Heroku and create an App with desired name
 2. Log into Heroku CLI in IDE workspace terminal using the bash command: *heroku login -i* and enter user credentials
 3. Run the command *git init* to re-initialise the Git repository
-4.
+4. 
 5. Set the app's stack to heroku-20 using the bash command: *heroku stack:set heroku-20* for compatibility purposes
-6. Deploy the application to Heroku using the following bash command: *git push heroku main --no-verify* . The --no-verify flag is used to
+6. Deploy the application to Heroku using the following bash command: *git push heroku main*
 
 ### Forking the GitHub Project
 To make a copy of the GitHub repository to use on your own account, one can fork the repository by doing as follows:
@@ -198,7 +198,39 @@ To make a copy of the GitHub repository to use on your own account, one can fork
 ## Testing
 
 ### Manual Testing
-* add this
+
+Testing User Stories
+- As a client, I can navigate easily around an interactive dashboard so that I can view and understand the data presented.
+| Feature    | Action     | Expected Result  | Actual Result |
+| ----------- | ----------- | ----------- | ----------- |
+| Navigation bar | Selecting buttons from main navigation bar |Selected page displayed with correct images/information| Functions as expected |
+
+- As a client, I can view and toggle visual graphs of average images (and avergae image difference) and image variabilities for both good and bad quality lemons so that I can observe the difference and understand the visual markers that indicate lemon quality better.
+| Feature    | Action     | Expected Result  | Actual Result |
+| ----------- | ----------- | ----------- | ----------- |
+| Average and standard deviation images button on Lemons Visualiser page | Selecting average image/image variability button | Relevant image plots are rendered | Functions as expected |
+| Difference between average image button on Lemons Visualiser page | Selecting difference in average images button | Relevant image plots are rendered | Functions as expected |
+- As a client, I can view an image montage of either good or bad quality lemons so that I can visually differentiate them.
+| Feature    | Action     | Expected Result  | Actual Result |
+| ----------- | ----------- | ----------- | ----------- |
+| Image montage button on Lemons Visualiser page| Selecting Image Montage button | Select dropdown to choose label for image montage is rendered along with button to create image montage | Functions as expected|
+|Image montage creation button on Lemons Visualiser page|Selecting label to display then pressing 'Create Montage' button|Relevant image montage of correct label is displayed|Functions as expected|
+- As a client, I can access and use a machine learning model so that I can obtain a class prediction on a lemon image provided.
+| Feature    | Action     | Expected Result  | Actual Result |
+| ----------- | ----------- | ----------- | ----------- |
+|  |      |       |               |
+- As a client, I can provide new raw data of a lemon and clean it so that I can run the provided model on it.
+| Feature    | Action     | Expected Result  | Actual Result |
+| ----------- | ----------- | ----------- | ----------- |
+|  |      |       |               |
+- As a client, I can feed cleaned data to the dashboard to allow the model to predict on it so that I can instantly discover whether a given lemon is of good or poor quality.
+| Feature    | Action     | Expected Result  | Actual Result |
+| ----------- | ----------- | ----------- | ----------- |
+|  |      |       |               |
+- As a client, I can save model predictions in a timestamped CSV file so that I can keep an account of the predictions that have been made.
+| Feature    | Action     | Expected Result  | Actual Result |
+| ----------- | ----------- | ----------- | ----------- |
+|  |      |       |               |
 
 ### Validation
 - All of the Python code in this project was validated as conforming to PEP8 standards via installation of the pycodestyle package in the workspace terminal via *pip install pycodestyle*
