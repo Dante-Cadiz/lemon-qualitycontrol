@@ -200,37 +200,37 @@ To make a copy of the GitHub repository to use on your own account, one can fork
 ### Manual Testing
 
 Testing User Stories
-- As a client, I can navigate easily around an interactive dashboard so that I can view and understand the data presented.
+As a client, I can navigate easily around an interactive dashboard so that I can view and understand the data presented.
 | Feature    | Action     | Expected Result  | Actual Result |
 | ----------- | ----------- | ----------- | ----------- |
-| Navigation bar | Selecting buttons from main navigation bar |Selected page displayed with correct images/information| Functions as expected |
+| Navigation bar | Selecting buttons from main navigation bar | Selected page displayed with correct images/information| Functions as expected |
 
-- As a client, I can view and toggle visual graphs of average images (and avergae image difference) and image variabilities for both good and bad quality lemons so that I can observe the difference and understand the visual markers that indicate lemon quality better.
+As a client, I can view and toggle visual graphs of average images (and avergae image difference) and image variabilities for both good and bad quality lemons so that I can observe the difference and understand the visual markers that indicate lemon quality better.
 | Feature    | Action     | Expected Result  | Actual Result |
 | ----------- | ----------- | ----------- | ----------- |
 | Average and standard deviation images button on Lemons Visualiser page | Selecting average image/image variability button | Relevant image plots are rendered | Functions as expected |
 | Difference between average image button on Lemons Visualiser page | Selecting difference in average images button | Relevant image plots are rendered | Functions as expected |
-- As a client, I can view an image montage of either good or bad quality lemons so that I can visually differentiate them.
+As a client, I can view an image montage of either good or bad quality lemons so that I can visually differentiate them.
 | Feature    | Action     | Expected Result  | Actual Result |
 | ----------- | ----------- | ----------- | ----------- |
 | Image montage button on Lemons Visualiser page| Selecting Image Montage button | Select dropdown to choose label for image montage is rendered along with button to create image montage | Functions as expected|
 |Image montage creation button on Lemons Visualiser page|Selecting label to display then pressing 'Create Montage' button|Relevant image montage of correct label is displayed|Functions as expected|
-- As a client, I can access and use a machine learning model so that I can obtain a class prediction on a lemon image provided.
+As a client, I can access and use a machine learning model so that I can obtain a class prediction on a lemon image provided.
 | Feature    | Action     | Expected Result  | Actual Result |
 | ----------- | ----------- | ----------- | ----------- |
-|  |      |       |               |
-- As a client, I can provide new raw data of a lemon and clean it so that I can run the provided model on it.
+| ML Performance Metrics Page | Opening ML Performance Metrics page via navbar | Graphs containing label frequencies, model history, and confusion matrix are correctly loaded      | Functions as expected |
+As a client, I can provide new raw data of a lemon and clean it so that I can run the provided model on it.
 | Feature    | Action     | Expected Result  | Actual Result |
 | ----------- | ----------- | ----------- | ----------- |
-|  |      |       |               |
-- As a client, I can feed cleaned data to the dashboard to allow the model to predict on it so that I can instantly discover whether a given lemon is of good or poor quality.
+| Lemon Image Cleaner side application | Uploading raw image data via file upload button | Page outputs rendering of original image and cleaned image below along with correct dimensions listed | Functions as expected |
+As a client, I can feed cleaned data to the dashboard to allow the model to predict on it so that I can instantly discover whether a given lemon is of good or poor quality.
 | Feature    | Action     | Expected Result  | Actual Result |
 | ----------- | ----------- | ----------- | ----------- |
-|  |      |       |               |
-- As a client, I can save model predictions in a timestamped CSV file so that I can keep an account of the predictions that have been made.
+| File uploader on Lemon Quality Assessor page | Uploading cleaned image data via file search button | Page outputs prediction of image class label along with graphical display of class probabilities | Functions as expected |
+As a client, I can save model predictions in a timestamped CSV file so that I can keep an account of the predictions that have been made.
 | Feature    | Action     | Expected Result  | Actual Result |
 | ----------- | ----------- | ----------- | ----------- |
-|  |      |       |               |
+| Download Report button on bottom of Lemon Quality Assessor Page | Pressing download button | File with .csv extension containing timestamped prediction report on uploaded data is saved to user machine | Functions as expected               |
 
 ### Validation
 - All of the Python code in this project was validated as conforming to PEP8 standards via installation of the pycodestyle package in the workspace terminal via *pip install pycodestyle*
