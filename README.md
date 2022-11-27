@@ -43,6 +43,7 @@ Business Requirement 2:
 * This hypothesis will be validated through visual examination of the generated images, along with application of Sobel filtering to bring out defined areas of edges in the images and clearly illuminate these differences.
 * Providing a new lemon image and applying the project's generated binary classification model to it would allow the client to predict the likely quality of a lemon to a high degree of accuracy.
 * This hypothesis will be validated through the testing and graphical evaluation of the generated model, specifically logging its validation accuracy and loss between epochs, as well as creating a confusion matrix between the two outcomes.
+* If these two hypotheses are validated, the client can use the insights offered by conventional image data analysis and the model to perform quality control tasks on their lemons with a high degree of accuracy.
 
 ## ML Business Case 
 - The client is interested in accurately predicting from a given image whether a lemon is of good or poor quality. This business objective will be delivered by the development and deployment of a TensorFlow deep learning pipeline trained on the previously generated dataset of class-labelled lemons.
