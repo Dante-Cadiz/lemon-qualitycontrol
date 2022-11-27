@@ -112,7 +112,7 @@ This additional data cleaning step proved effective both in reducing the potenti
 
 ### Presentation of data visualisation plots
 
-* The Lemons Visualiser page covers the first Data Analysis business objective of the project. It contains toggle-able plots that can easily be opened and closed via the inbuilt toolbar, examples of which are below.\n
+* The Lemons Visualiser page covers the first Data Analysis business objective of the project. It contains toggle-able plots that can easily be opened and closed via the inbuilt toolbar, examples of which are below.
 ![Average and variability of images example](https://i.imgur.com/EyEADjt.png)
 ![Difference between average and variability of images](https://i.imgur.com/3D4JndY.png)
 * This app page also contains an image montage creation tool, where the user can slect a class of label for which to display a montage generated via graphical presentation of random validation set images.
